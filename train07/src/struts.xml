@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="shawn" extends="struts-default">
+		<!-- <action name="*Action" class="com.shawn.struts.train.action.{1}Action"> 
+			<result name="input">/login.jsp</result> <result name="error">/error.jsp</result> 
+			<result name="success">/welcome.jsp</result> </action> -->
+		<!-- <action name="*Action" class="com.shawn.struts.train.action.LoginAction" 
+			method="{1}"> <result name="input">/login.jsp</result> <result name="error">/error.jsp</result> 
+			<result name="success">/welcome.jsp</result> </action> -->
+
+		<action name="myAction"
+			class="com.shawn.struts.train.action.LoginAction">
+			<result name="input">/login.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="success">/welcome.jsp</result>
+		</action>
+	</package>
+</struts>    

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="shawn" extends="struts-default">
+		<interceptors>
+			<interceptor name="authority"
+				class="com.shawn.struts.train.interceptor.MyInterceptor" />
+			<interceptor name="infoPageMessage"
+				class="com.shawn.struts.train.interceptor.InfoInterceptor" />
+		</interceptors>
+
+		<global-results>
+			<result name="login">/login.jsp</result>
+		</global-results>
+
+		<action name="Login" class="com.shawn.struts.train.action.LoginAction">
+			<result name="error">/error.jsp</result>
+			<result name="success">/welcome.jsp</result>
+		</action>
+
+		<action name="GetBooks" class="com.shawn.struts.train.action.GetBooksAction">
+			<result name="success">/showBook.jsp</result>
+			<result name="infoPage">/infoPage.jsp</result>
+			<interceptor-ref name="authority" />
+			<interceptor-ref name="infoPageMessage" >
+				<param name="excludeMethods">getInfo2</param>
+			</interceptor-ref>
+		</action>
+	</package>
+</struts>    
