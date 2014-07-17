@@ -18,6 +18,7 @@ public class LoginAction extends ActionSupport {
 
 	public String getPassword() {
 		return password;
+		// test
 	}
 
 	public void setPassword(String password) {
